@@ -1,0 +1,110 @@
+# -*- coding: utf-8 -*-
+"""
+Creation: January 2023
+@author:
+    
+   __           _                                                  
+  / /  ___  ___| |_                                             
+ / /  / _ \/ __| __|                                            
+/ /__| (_) \__ \ |_                                            
+\____/\___/|___/\__|  
+
+
+
+A simple generator of password in python :)
+"""
+
+# -----------------------------------------------------------------------------
+# --------------------------------- IMPORTS -----------------------------------
+# -----------------------------------------------------------------------------
+
+from colorama import Fore, Style
+from time import sleep
+import random as rd
+import sys
+
+# -----------------------------------------------------------------------------
+# -------------------------------- FONCTION -----------------------------------
+# -----------------------------------------------------------------------------
+
+def choose_password(size):
+    """
+    Choose a password of the size of the parameter "size".
+
+    Parameters
+    ----------
+    size : TYPE int
+        The password's size.
+
+    Returns
+    -------
+    password : TYPE str
+        Your password.
+
+    """
+    assert type(size) == int, "You must enter a number to choose your password's size"
+    password = ""
+    for i in range(size ):
+        caracter = rd.randint(33, 126)
+        password += chr(caracter)
+    return password
+
+def title():
+    """
+    Print my name and the welcome message.
+
+    Returns
+    -------
+    None.
+
+    """
+
+    print(Fore.MAGENTA + """
+   ----------------------------------      
+   |         __           _         |                                      
+   |        / /  ___  ___| |        |                                  
+   |       / /  / _ \/ __| __|      |                                 
+   |      / /__| (_) \__ \ |_       |                               
+   |      \____/\___/|___/\__|      |
+   |                                |
+   ----------------------------------\n* Welcome to your generator of password *\n""")
+    print(Style.RESET_ALL)
+
+
+    
+
+def main():
+    """
+    The main fonction.
+
+    Returns
+    -------
+    None.
+
+    """
+    title()
+    size = ""
+    while type(size) != int:                                    
+        size = input("Choose a size for your password \nYou must enter a number \n",)         
+        try :
+            int(size)
+        except:
+            print("ERROR: You must enter a NUMBER")
+        else:
+            size = int(size)
+
+    print("Here is your password : ", Fore.MAGENTA + choose_password(size), Style.RESET_ALL)
+    close = ""
+    while close != "y" and close != "n":
+        close = input("Do you want to close this program ? \n'y' or 'n' \n")
+    if close == "y":
+        sys.exit()
+    else:
+        sleep(600)
+
+
+# -----------------------------------------------------------------------------
+# --------------------------------- Program -----------------------------------
+# -----------------------------------------------------------------------------                                                                                
+
+main()
