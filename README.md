@@ -21,5 +21,5 @@ Delete :
 ", Style.RESET_ALL" (line 96)
 
 
-THANKS FOR YOUR DOWNLOAD.
+THANKS FOR YOUR DOWNLOAD.\n
 .L.
