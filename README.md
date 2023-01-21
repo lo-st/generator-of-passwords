@@ -3,7 +3,7 @@ Hello  I'm LOST !
 
 This is one of my first little project. I hope you will enjoy !
 
-This program is a generator of passwords. You can choose the size of your password and the program will create one for you.
+This program is a generator of passwords in python. You can choose the size of your password and the program will create one for you.
 Some packages must to be download to run this program :
 - colorama
 - time
